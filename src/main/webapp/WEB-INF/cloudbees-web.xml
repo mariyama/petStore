@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<cloudbees-web-app xmlns="http://www.cloudbees.com/xml/webapp/1">
+
+  <resource name="jdbc/mysql-petstore" auth="Container" type="javax.sql.DataSource">
+    <param name="username" value="USERNAME" />
+    <param name="password" value="PASSWORD" />
+    <param name="url" value="JDBC_URL" />
+
+    <!-- Connection Pool settings -->
+    <param name="maxActive" value="5" />
+    <param name="maxIdle" value="2" />
+    <param name="maxWait" value="10000" />
+    <param name="removeAbandoned" value="true" />
+    <param name="removeAbandonedTimeout" value="60" />
+    <param name="logAbandoned" value="true" />
+
+    <!-- Purge invalid connections -->
+    <param name="validationQuery" value="SELECT 1" />
+    <param name="testOnBorrow" value="true" />
+   </resource>
+
+</cloudbees-web-app>
